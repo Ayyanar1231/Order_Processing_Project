@@ -1,0 +1,61 @@
+CREATE TABLE product (
+    product_id NUMBER NOT NULL,
+    product_name VARCHAR2(50) NOT NULL,
+    price NUMBER NOT NULL,  
+    quantity NUMBER NOT NULL,
+    stock_in_hand NUMBER NOT NULL,
+    brand VARCHAR2(50) NOT NULL,
+    colour VARCHAR2(50) NOT NULL,
+    
+    PRIMARY KEY (product_id)
+);
+
+=================================
+CREATE TABLE customer_detail (
+    customer_id NUMBER NOT NULL,
+    customer_username VARCHAR2(50) NOT NULL UNIQUE,
+    customer_password VARCHAR2(50) NOT NULL UNIQUE,  
+    join_date DATE NOT NULL,
+    customer_name VARCHAR2(50) NOT NULL,
+    email_id VARCHAR2(50) NOT NULL,
+    gender VARCHAR2(50) NOT NULL,
+    phone_number NUMBER NOT NULL,
+    account_number NUMBER NOT NULL,  
+    address VARCHAR2(50) NOT NULL,
+    district VARCHAR2(50) NOT NULL,
+    state VARCHAR2(50) NOT NULL,
+    country VARCHAR2(50) NOT NULL,
+    pin_code NUMBER NOT NULL,
+    
+    PRIMARY KEY (customer_id)
+);
+
+================================
+CREATE TABLE orders (
+    order_id NUMBER NOT NULL,
+    customer_id NUMBER NOT NULL,
+    order_date VARCHAR2(50) NOT NULL,  
+    ship_date VARCHAR2(50) NOT NULL,
+    delivery_fees NUMBER NOT NULL,
+    order_amount NUMBER NOT NULL,
+    payment_type VARCHAR2(50) NOT NULL,
+    payment_reference_number VARCHAR2(50) NOT NULL,
+    
+    PRIMARY KEY (order_id),
+    FOREIGN KEY (customer_id) REFERENCES customer_detail(customer_id)
+);
+
+==============================
+CREATE TABLE order_detail (
+    order_id NUMBER NOT NULL,
+    product_id NUMBER NOT NULL,
+    quantity NUMBER NOT NULL,  
+    price NUMBER NOT NULL,
+    total_amount NUMBER NOT NULL,
+    
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES product(product_id),
+    PRIMARY KEY (order_id,product_id)
+);
+
+==========================

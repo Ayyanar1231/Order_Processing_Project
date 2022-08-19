@@ -1,0 +1,12 @@
+body {
+	background-color: AntiqueWhite;
+	text-align: center;
+	background-image:
+		url("https://img.freepik.com/premium-photo/old-wooden-table-top-green-blurred-abstract-background-from-foliage-background-ready-used-us-display-montage-products-design_1962-1382.jpg?size=626&ext=jpg&ga=GA1.2.844043455.1660729221");
+		background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	width: 1341px;
+    height: 600px;
+}

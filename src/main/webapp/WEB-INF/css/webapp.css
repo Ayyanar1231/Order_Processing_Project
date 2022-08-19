@@ -1,0 +1,51 @@
+body {
+	background-image:
+		url("https://thumbs.dreamstime.com/b/trolley-shopping-cart-logo-icon-design-shop-symbol-vector-illustrations-161932537.jpg");
+	background-position: center;
+	text-align: "center";
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	width: 1386px;
+	height: 625px;
+}
+
+h1 {
+	font-family:serif;
+	font-style: oblique;
+	background-color: red;
+	font-variant: small-caps;
+	font-size: 48px;
+	color: block;
+	text-align: center;
+}
+
+h2 {
+	font-family: "Audiowide", sans-serif;
+	font-family:serif;
+	font-style: oblique;
+	font-variant: small-caps;
+	font-size: 35px;
+}
+
+a {
+	color: #1a1a00;
+}
+
+h3 {
+	color: #134d00;
+	text-align: center;
+}
+
+
+
+.form {
+	text-align: "center";
+}
+
+.layout {
+	font-weight: 900;
+	margin-top: 133px;
+	padding-inline-start: 409px;
+}

@@ -1,0 +1,11 @@
+body {
+	background-image:
+		url("https://img.freepik.com/free-photo/full-shot-travel-concept-with-landmarks_23-2149153258.jpg?3&w=900&t=st=1660880001~exp=1660880601~hmac=01463031b7f723416e5981188cc972137445bc522c3243f4751247830bdd1fd6");
+	color: red;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	width: 1341px;
+    height: 600px;
+}
