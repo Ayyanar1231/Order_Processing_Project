@@ -4,11 +4,13 @@
 
 body {
 	background-image:
-		url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img(20).webp");
+		url("https://www.gizmochina.com/wp-content/uploads/2020/05/Mi-TV-4-Mi-Box-4K-Discount-Offer.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+	height: 600px;
+	width: 1300px;
 }
 
 form {
@@ -154,6 +156,7 @@ h3 {
 	text-align: center;
 	font-size: 150%;
 }
+
 .invalid {
 	color: red;
 	text-align: center;

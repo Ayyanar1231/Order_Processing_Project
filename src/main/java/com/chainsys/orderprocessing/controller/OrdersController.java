@@ -2,6 +2,7 @@ package com.chainsys.orderprocessing.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,10 +44,11 @@ public class OrdersController {
 	}
 
 	@PostMapping("/add")
-	public String addNewOrder(@Valid @ModelAttribute("addOrder") Orders theOrder, Errors errors) {
+	public String addNewOrder(@Valid @RequestParam("customerId")int id, @ModelAttribute("addOrder") Orders theOrder, Errors errors,HttpSession session) {
 		if (errors.hasErrors()) {
 			return "add-order";
 		}
+//		session.setAttribute("customerId", theOrder.setCustomerId(id));
 		theOrder.setOrderDate();
 		theOrder.setShipDate();
 		theOrder = ordersService.save(theOrder);

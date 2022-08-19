@@ -1,5 +1,7 @@
 package com.chainsys.orderprocessing.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,11 +39,12 @@ public class UserLoginController {
 	}
 
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customer,Model model) {
+	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customer,Model model,HttpSession session) {
 		CustomerDetail customerDetail = customerDetailService
 				.getCustomerUserNameAndCustomerPassword(customer.getCustomerUserName(), customer.getCustomerPassword());
 	
 		if (customerDetail != null) {
+			session.setAttribute("customerId", customerDetail.getCustomerId());
 			return "redirect:/product/listproduct";
 		} else
 			return "invalid-customer-error";

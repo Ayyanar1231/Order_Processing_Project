@@ -1,14 +1,16 @@
 body {
-	/* background-color: AntiqueWhite; */
-	font-family: sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
 	display: flex;
-	text-align: left;
 	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 600px;
+	width: 1200px;
 	background-image:
-		url('https://techstory.in/wp-content/uploads/2020/03/s3-news-tmp-136742-flipkart2-2x1-828.jpg');
+		url('https://naijatechgist.com/wp-content/uploads/2020/08/infinix-smart-5.jpeg');
 }
 
 .container {
@@ -32,7 +34,7 @@ body {
 	background-color: Violet;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 12px;
+	margin-bottom: 290px;
 	overflow: hidden;
 	padding: 0 .625em;
 }

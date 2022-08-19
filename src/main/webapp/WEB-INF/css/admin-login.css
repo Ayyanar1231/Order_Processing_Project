@@ -3,12 +3,14 @@
 }
 
 body {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
-		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: white;
-	font-size: 12px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	height: 600px;
+	width: 1300px;
 	background-image:
-		url('https://techstory.in/wp-content/uploads/2020/03/s3-news-tmp-136742-flipkart2-2x1-828.jpg');
+		url('https://www.nicepng.com/png/full/263-2636292_system-administrator-icon-png.png');
 }
 
 form {
@@ -152,6 +154,11 @@ h3 {
 	text-align: center;
 }
 
+.h1 {
+	color: white;
+	text-align: center;
+	font-size: 150%;
+}
 h2 {
 	color: red;
 	text-align: center;

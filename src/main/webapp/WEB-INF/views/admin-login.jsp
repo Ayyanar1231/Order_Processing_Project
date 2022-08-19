@@ -15,7 +15,7 @@
 	<div>
 		<form:form action="checkadminlogin" method="post"
 			modelAttribute="admin">
-			<h1>Admin Login</h1>
+			<h1 class="h1">Admin Login</h1>
 			<div class="inset">
 				<p>
 					<label for="adminName">ADMIN NAME :</label>

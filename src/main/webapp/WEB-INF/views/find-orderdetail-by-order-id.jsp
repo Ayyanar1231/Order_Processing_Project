@@ -48,8 +48,8 @@ background-color:#cce6ff;
 		</table>
 	</div>
 	<br>
-	<div>
-		<a href="/ordersuccess"><button>Done</button></a>
+	<div style="color: red">
+		<a href="/ordersuccess" ><button>Done</button></a>
 	</div>
 </body>
 </html>

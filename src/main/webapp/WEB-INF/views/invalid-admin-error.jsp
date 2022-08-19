@@ -16,7 +16,7 @@
 		modelAttribute="admin">
 		<h2>Invalid Admin</h2>
 		<div class="invalid">Check your admin name and password</div>
-		<h1>Admin Login</h1>
+		<h1 class="h1">Admin Login</h1>
 		<div class="inset">
 			<p>
 				<label for="adminName">USERNAME :</label>

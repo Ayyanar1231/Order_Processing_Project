@@ -1,14 +1,16 @@
 body {
-	/* background-color: AntiqueWhite; */
-	font-family: sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
 	display: flex;
-	text-align: left;
 	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	margin: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 600px;
+	width: 1300px;
 	background-image:
-		url('https://techstory.in/wp-content/uploads/2020/03/s3-news-tmp-136742-flipkart2-2x1-828.jpg');
+		url('https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzY291bnR8ZW58MHx8MHx8&w=1000&q=80');
 }
 
 .container {
@@ -32,9 +34,7 @@ body {
 	background-color: Orange;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 12px;
-	overflow: hidden;
-	padding: 0 .625em;
+	margin-bottom: 335px;
 }
 
 .form label {

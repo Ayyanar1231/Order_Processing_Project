@@ -17,16 +17,16 @@
 		<form:form action="index" method="post">
 				<h1><span class="fa fa-shopping-cart" style="font-size:48px;color:black"></span>Welcome to the Flipkart<span class="fa fa-shopping-cart" style="font-size:48px;color:black"></span></h1>
 			<div class="layout">
-					<div class='fas fa-user-cog' style='font-size: 90px;margin-left: -413px; color: #4d004d;background-color: red;'>
+					<div class='fas fa-user-cog' style='font-size: 90px;margin-left: -413px; color: #175b66;background-color: red;'>
 						<h2>
-							<a href="/adminlogin" style="text-decoration: none;color: black;" class="test">ADMIN
+							<a href="/adminlogin" style="text-decoration: none;color: #3dbbc1;" class="test">ADMIN
 								LOGIN</a><br>
 						</h2>
 					</div>
 					<div class='fas fa-users'
-						style='font-size: 90px; color: #4d004d;margin-left: 926px;background-color: red;'>
+						style='font-size: 90px; color: #175b66;margin-left: 926px;background-color: red;'>
 						<h2>
-							<a href="/customerlogin" style="text-decoration: none;color: black;"
+							<a href="/customerlogin" style="text-decoration: none;color: #3dbbc1;"
 								class="test">CUSTOMER LOGIN</a>
 						</h2>
 					</div>

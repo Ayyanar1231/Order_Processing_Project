@@ -5,11 +5,10 @@ body {
 	display: flex;
 	justify-content: center;
 	background-image:
-		url("https://wallpaperaccess.com/full/1733017.jpg");
+		url("https://img.lovepik.com/desgin_photo/45007/8046_list.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	position: relative;
 }
 
 .container {
