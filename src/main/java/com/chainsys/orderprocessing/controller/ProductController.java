@@ -38,8 +38,6 @@ public class ProductController {
 	public String getProducts(Model model) {
 		List<Product> theProduct = productService.getProducts();
 		model.addAttribute("allProduct", theProduct);
-//		Product product = new Product();
-//		product.getCutomerId(id);
 		return "list-products";
 	}
 
@@ -47,7 +45,6 @@ public class ProductController {
 	public String getProduct(@RequestParam("productId") int id, Model model) {
 		Product theProduct = productService.findByid(id);
 		model.addAttribute("getProductById", theProduct);
-//		int productId = theProduct.getProductId();
 		return "find-product-id";
 	}
 
@@ -105,13 +102,13 @@ public class ProductController {
 		if (errors.hasErrors()) {
 			return "update-product";
 		}
-//		product.setProductId(product.getProductId()); 
-//		product.setProductName(product.getProductName());
-//		product.setQuantity(product.getQuantity());
-//		product.setBrand(product.getBrand());
-//		product.setPrice(product.getPrice());
-//		product.setColour(product.getColour());
-//		product.setStockInHand(product.getStockInHand());
+		product.setProductId(product.getProductId()); 
+		product.setProductName(product.getProductName());
+		product.setQuantity(product.getQuantity());
+		product.setBrand(product.getBrand());
+		product.setPrice(product.getPrice());
+		product.setColour(product.getColour());
+		product.setStockInHand(product.getStockInHand());
 		String imageUUID;
 		if (!file.isEmpty()) {
 			imageUUID = file.getOriginalFilename();
