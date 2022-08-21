@@ -44,7 +44,7 @@ public class OrdersController {
 	}
 
 	@PostMapping("/add")
-	public String addNewOrder(@Valid @ModelAttribute("addOrder") Orders theOrder, Errors errors,HttpSession session) {
+	public String addNewOrder(@Valid @ModelAttribute("addOrder") Orders theOrder, Errors errors) {
 		if (errors.hasErrors()) {
 			return "add-order";
 		}

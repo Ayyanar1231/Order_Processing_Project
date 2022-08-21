@@ -39,7 +39,7 @@ public class UserLoginController {
 	}
 
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customerDetail,Model model,HttpSession session) {
+	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customerDetail) {
 		CustomerDetail customer = customerDetailService
 				.getCustomerUserNameAndCustomerPassword(customerDetail.getCustomerUserName(), customerDetail.getCustomerPassword());
 	
