@@ -119,7 +119,7 @@ public class ProductController {
 		}
 		product.setImage(imageUUID);
 		productService.save(product);
-		return "redirect:/admin";
+		return "update-product-form";
 	}
 
 	@GetMapping("/getdelete")
@@ -130,7 +130,7 @@ public class ProductController {
 	@GetMapping("/deleteproduct")
 	public String deleteProduct(@RequestParam("productId") int id) {
 		productService.deleteById(id);
-		return "redirect:/admin";
+		return "delete-product-form";
 	}
 
 	@GetMapping("/getfilterprice")
