@@ -1,6 +1,5 @@
 body {
-	background-image:
-		url("https://wallpaperaccess.com/full/1804131.jpg");
+	background-image: url("https://pbs.twimg.com/media/E5Rl8j_VUAMJ0Jb.jpg");
 	background-position: center;
 	text-align: "center";
 	background-repeat: no-repeat;
@@ -8,22 +7,22 @@ body {
 	position: relative;
 	overflow: hidden;
 	width: 1360px;
-	height: 600px;
+	height: 700px;
 }
 
 h1 {
-	font-family:serif;
+	font-family: serif;
 	font-style: oblique;
-	background-color: red;
+	background-color: #0b0446;
 	font-variant: small-caps;
 	font-size: 48px;
-	color: block;
+	color: chartreuse;
 	text-align: center;
 }
 
 h2 {
 	font-family: "Audiowide", sans-serif;
-	font-family:serif;
+	font-family: serif;
 	font-style: oblique;
 	font-variant: small-caps;
 	font-size: 35px;
@@ -37,8 +36,6 @@ h3 {
 	color: #134d00;
 	text-align: center;
 }
-
-
 
 .form {
 	text-align: "center";

@@ -6,7 +6,7 @@ CREATE TABLE product (
     stock_in_hand NUMBER NOT NULL,
     brand VARCHAR2(50) NOT NULL,
     colour VARCHAR2(50) NOT NULL,
-    
+    image varchar2(50),
     PRIMARY KEY (product_id)
 );
 
@@ -15,12 +15,12 @@ CREATE TABLE customer_detail (
     customer_id NUMBER NOT NULL,
     customer_username VARCHAR2(50) NOT NULL UNIQUE,
     customer_password VARCHAR2(50) NOT NULL UNIQUE,  
-    join_date DATE NOT NULL,
+    join_date VARCHAR2(50) NOT NULL,
     customer_name VARCHAR2(50) NOT NULL,
     email_id VARCHAR2(50) NOT NULL,
     gender VARCHAR2(50) NOT NULL,
-    phone_number NUMBER NOT NULL,
-    account_number NUMBER NOT NULL,  
+    phone_number NUMBER NOT NULL UNIQUE,
+    account_number NUMBER NOT NULL UNIQUE,  
     address VARCHAR2(50) NOT NULL,
     district VARCHAR2(50) NOT NULL,
     state VARCHAR2(50) NOT NULL,
@@ -37,8 +37,8 @@ CREATE TABLE orders (
     order_date VARCHAR2(50) NOT NULL,  
     ship_date VARCHAR2(50) NOT NULL,
     delivery_fees NUMBER NOT NULL,
-    order_amount NUMBER NOT NULL,
-    payment_type VARCHAR2(50) NOT NULL,
+    order_amount NUMBER,
+    payment_type VARCHAR2(50) NOT NULL ,
     payment_reference_number VARCHAR2(50) NOT NULL,
     
     PRIMARY KEY (order_id),
@@ -53,8 +53,8 @@ CREATE TABLE order_detail (
     price NUMBER NOT NULL,
     total_amount NUMBER NOT NULL,
     
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES product(product_id),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE,
     PRIMARY KEY (order_id,product_id)
 );
 

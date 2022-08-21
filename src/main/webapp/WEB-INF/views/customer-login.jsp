@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
 <title>Login</title>
 <style type="text/css">
 <%@include file="/WEB-INF/css/login.css"%>
+
 </style>
 </head>
 <body>
@@ -40,4 +42,5 @@
 		</form:form>
 	</div>
 </body>
+
 </html>

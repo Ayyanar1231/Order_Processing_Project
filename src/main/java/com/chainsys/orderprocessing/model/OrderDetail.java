@@ -28,10 +28,10 @@ public class OrderDetail {
 	@Min(value = 1, message = "Quantity minimum value 1")
 	private int quantity;
 	@Column(name = "price")
-	@Range(min = (long) 10.0)
+	@Range(min = (long) 10.0,message="Price not valid")
 	private double price;
 	@Column(name = "total_amount")
-	@Range(min = (long) 10.0)
+	@Range(min = (long) 10.0,message="Total Amount not valid")
 	private double totalAmount;
 
 	@ManyToOne(fetch = FetchType.LAZY)

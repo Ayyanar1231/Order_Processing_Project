@@ -11,21 +11,14 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
-<style><%@include file="/WEB-INF/css/list-product.css"%>.table-size {
-	border: 2;
-	width: 100%;
-	cellpadding: 2;
-	background-color: #cce6ff;
-}
+<style><%@include file="/WEB-INF/css/list-product.css"%>
 </style>
 <body>
 	<div >
-		<button onclick="document.location='/webapp'" style="float: right;">Home</button>
-		<button onclick="document.location='/customerlogin'"
-			style="float: left;">Back</button>
-		<button name="value"
+		<button onclick="document.location='/customerlogin'" class="btn" style="float: right;">Back</button>
+		<button name="value" class="btn"
 			onclick="document.location='/product/getfilterprice'"
-			style="float: center;">Filter Price</button>
+			style="margin: 20px;">Filter Price</button>
 	</div>
 	<div id="table root">
 		<table class="table-size">
@@ -58,8 +51,8 @@
 						<td>${product.brand}</td>
 						<td>${product.colour}</td>
 						<td><a
-							href="/product/getproductbyid?productId=${product.productId}"><button>View
-									Product</button></a></td>
+							href="/product/getproductbyid?productId=${product.productId}">View
+									Product</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -47,7 +47,7 @@ public class OrderDetailController {
 	}
 
 	@PostMapping("/add")
-	public String addNewOrderDetails( @ModelAttribute("addOrderDetail") OrderDetail theOrders,Errors errors) {
+	public String addNewOrderDetails(@Valid @ModelAttribute("addOrderDetail") OrderDetail theOrders,Errors errors) {
 		if(errors.hasErrors()) {
 			return "add-order-detail";
 		}

@@ -14,9 +14,7 @@
 <body>
 
 	<div class="form" id="root">
-		<button onclick="document.location='/webapp'" style="float: right;">Home</button>
-		<button onclick="document.location='/product/listproduct'"
-			style="float: left;">Back</button>
+		<button class="btn" onclick="document.location='/product/listproduct'">Home</button>
 		<br> <br>
 		<div class="header" id="form">
 			<form:form action="/orders/add" method="post"
@@ -46,13 +44,13 @@
 				</div>
 				<br>
 				<div>
-					<button style="float: center;">Order Now</button>
+					<button class="btn" style="float: center;">Order Now</button>
 				</div>
 			</form:form>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-	document.getElementById("referanceNumber").value = Math.floor(Math.random() * 10000);
+	document.getElementById("referanceNumber").value = Math.floor(Math.random() * 100000);
 </script>
 </html>

@@ -13,10 +13,8 @@
 </head>
 <body>
 	<div class="form" id="root">
-		<button onclick="document.location='/product/listproduct'"
-			style="float: left;">Back</button>
-		<button onclick="document.location='/webapp'" style="float: right;">Home</button>
-		<br> <br>
+		<button class="btn" onclick="document.location='/product/listproduct'"
+			style="float: center;">Back</button>
 		<div class="header" id="form">
 			<form:form action="getproductbyid" method="post"
 				modelAttribute="getProductById">
@@ -60,8 +58,7 @@
 				<br>
 
 			</form:form>
-			<button onclick="document.location='../orders/addorder?id=${order.customerId}'"
-				style="float: center;">Order Now</button>
+			<button class="btn"  onclick="document.location='/orders/addorder?id=${order.customerId}'">Click Now</button>
 		</div>
 	</div>
 

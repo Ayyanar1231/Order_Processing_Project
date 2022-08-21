@@ -13,8 +13,8 @@
 </head>
 <body>
 	<div class="form" id="root">
-		<button onclick="document.location='/webapp'" style="float: right;">Home</button>
-		<button onclick="document.location='/product/listproduct'"
+		<button class="btn" onclick="document.location='/product/listproduct'" style="float: right;">Home</button>
+		<button class="btn" onclick="document.location='/orders/addorder'"
 			style="float: left;">Back</button>
 		<br> <br>
 		<div class="header" id="form">
@@ -48,7 +48,7 @@
 					<form:errors path="totalAmount" class="text-danger"></form:errors>
 				</div>
 				<div>
-					<form:button>Add New Order Detail</form:button>
+					<button class="btn">New Order Done</button>
 				</div>
 			</form:form>
 		</div>

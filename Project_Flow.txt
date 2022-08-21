@@ -1,0 +1,78 @@
+# Title : On-line Order Processing
+
+
+# Description
+
+Product :
+
+     * The project product description is a special form of product description that defines what the project must 
+	   deliver in order to gain acceptance.
+	   
+	 * It is used to: gain agreement from the user on the project's scope and requirements. 
+	 
+	 * define the customer's quality expectations.
+
+
+# General Information
+
+1.This Auto mobile Management is used Booking for Car in a Digital perspective.
+
+2.This is also used for rental management purpose.
+
+# Project Flow
+
+   
+    WebApp ---> -Customer Login   -> Create New Account  -> Register Customer Details 
+	                                                     -> Go To Login Page
+														 -> View Product List 
+														 -> Find in Product Id 
+														 -> Order Add          
+														 -> Order Detail Add 
+														 -> Ordered Detail Find in Id List 
+														 -> Order Successful Status.
+														 
+														 
+	
+                -Admin Login      ->  Customer Details  -> Customer Detail List
+				                                        -> Customer Detail Delete
+														-> Customer Detail Find In Id
+														-> Customer Detail DTO In Orders
+													
+						          ->  Product           -> Product Add     
+                                                        -> Product Update 
+                                                        -> Product Delete 
+                                                          
+                                                                
+                              
+                                  -> Order Detail    -> Order Detail List
+								                    -> Order Detail DTO In Product,Orders 
+                
+
+# Features
+
+1.DB Connectivity.
+2.DB Relational data Handling.
+   Lookup relation.
+   One to many relation.
+3.Form validation in FrontEnd level.
+4.Form validation in JavaScript level.
+5.Form null validation in Oracle database level.
+
+# Technology
+
+# FrontEnd 
+
+1.CSS
+2.HTML
+3.JAVASCRIPT
+
+# BackEnd
+
+1. Java Version:1.8
+2.SpringBoot: 2.6.7
+
+
+
+# Database
+
+1. Oracle(SQL)

@@ -49,7 +49,7 @@ background-color:#cce6ff;
 	</div>
 	<br>
 	<div style="color: red">
-		<a href="/ordersuccess" ><button>Done</button></a>
+		<a href="/ordersuccess" ><button class="btn">Done</button></a>
 	</div>
 </body>
 </html>
