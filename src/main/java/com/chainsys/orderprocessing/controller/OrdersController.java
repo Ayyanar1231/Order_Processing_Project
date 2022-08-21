@@ -79,19 +79,4 @@ public class OrdersController {
 		return "redirect:/orders/listorders";
 	}
 
-//	@GetMapping("/listordersbycustomer")
-//	public String getOrdersOfCustomer(@Valid @RequestParam("cid") int cid, Model model) {
-//		List<Orders> theOrders = ordersService.fetchAllByCustomerId(cid);
-//		for (Orders orders : theOrders) {
-//			List<OrderDetail> orderDetails = orderDetailService.getOrderDetailByOrderId(orders.getOrderId());
-//			for (OrderDetail product : orderDetails) {
-//				Product products = productService.findByid(product.getProductId());
-//				model.addAttribute("allProducts", products);
-//				model.addAttribute("allOrderedProducts", orderDetails);
-//				model.addAttribute("allCustomerorders", theOrders);
-//			}
-//		}
-//		return "list-orders-customer";
-//	}
-
 }

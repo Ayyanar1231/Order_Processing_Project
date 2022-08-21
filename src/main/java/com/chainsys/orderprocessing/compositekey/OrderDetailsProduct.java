@@ -37,26 +37,4 @@ public class OrderDetailsProduct implements Serializable {
 		this.productId = productId;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(this.getOrderId(), this.getProductId());
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		boolean result = false;
-		if (obj == null) {
-			return false;
-		}
-		Class<? extends Object> c1 = obj.getClass();
-		if (c1 == this.getClass()) {
-			OrderDetailsProduct orderDetailsProduct = (OrderDetailsProduct) obj;
-			if (orderDetailsProduct.getOrderId() == this.getOrderId()) {
-				if (orderDetailsProduct.getProductId() == this.getProductId())
-					result = true;
-			}
-		}
-		return result;
-	}
-
 }
