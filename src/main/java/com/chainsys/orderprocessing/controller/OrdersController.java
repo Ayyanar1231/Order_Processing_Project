@@ -48,7 +48,6 @@ public class OrdersController {
 		if (errors.hasErrors()) {
 			return "add-order";
 		}
-//		session.setAttribute("customerId", theOrder.setCustomerId(id));
 		theOrder.setOrderDate();
 		theOrder.setShipDate();
 		theOrder = ordersService.save(theOrder);

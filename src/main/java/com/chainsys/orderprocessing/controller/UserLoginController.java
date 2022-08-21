@@ -39,12 +39,11 @@ public class UserLoginController {
 	}
 
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customer,Model model,HttpSession session) {
-		CustomerDetail customerDetail = customerDetailService
-				.getCustomerUserNameAndCustomerPassword(customer.getCustomerUserName(), customer.getCustomerPassword());
+	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customerDetail,Model model,HttpSession session) {
+		CustomerDetail customer = customerDetailService
+				.getCustomerUserNameAndCustomerPassword(customerDetail.getCustomerUserName(), customerDetail.getCustomerPassword());
 	
-		if (customerDetail != null) {
-			session.setAttribute("customerId", customerDetail.getCustomerId());
+		if (customer != null) {
 			return "redirect:/product/listproduct";
 		} else
 			return "invalid-customer-error";
