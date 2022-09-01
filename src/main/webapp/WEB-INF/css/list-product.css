@@ -1,6 +1,5 @@
 body {
-	background-image:
-		url("https://imageio.forbes.com/specials-images/imageserve/62d022054a6ac3d5576829c9/0x0.jpg?format=jpg&width=1200");
+	background-image: url("https://static.wixstatic.com/media/f0f902_ed578cdb434b4f63a96ab507bcd2cd54~mv2.gif");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -13,7 +12,7 @@ body {
 	border: 2;
 	width: 100%;
 	padding: 2;
-	background-color: #cce6ff;
+	background-color: rgb(0, 255, 0);
 	border-style: double;
 }
 
@@ -49,9 +48,9 @@ tr:hover {
 }
 
 a:link, a:visited {
-  background-color: #e30753;
+  background-color: #161515;
   color: white;
-  padding: 5px 15px;
+  padding: 1px 15px;
   text-align: center;
   text-decoration: none;
 }
@@ -59,4 +58,8 @@ a:link, a:visited {
 a:hover, a:active {
   background-color: white;
   color: black;
+}
+h2 {
+	text-align: center;
+	color: white;
 }

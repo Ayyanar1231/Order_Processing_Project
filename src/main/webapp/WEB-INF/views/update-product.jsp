@@ -70,7 +70,7 @@
 					</div>
 				</div>
 				<input type="hidden" name="imgName" value="product.image">
-				<form:button type="submit" class="btn btn-primary">Update Product</form:button>
+				<form:button type="submit" class="btn">Update Product</form:button>
 			</form:form>
 		</div>
 	</div>

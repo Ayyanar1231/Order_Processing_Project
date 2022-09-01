@@ -25,7 +25,7 @@ public class AdminService {
 		return adminRepository.findById(id);
 	}
 
-	public Admin getAdminNameAndAdminPassword(String name, String password) {
-		return adminRepository.findByAdminNameAndAdminPassword(name, password);
+	public Admin getAdminEmailAndAdminPassword(String name, String password) {
+		return adminRepository.findByAdminEmailAndAdminPassword(name, password);
 	}
 }

@@ -23,77 +23,19 @@ background-color:#cce6ff;
 		<div id="cusform">
 			<form:form action="getcustomerorder" method="post" modelAttribute="getCustomer">
 				<div>
-					<label for="customerId">Customer Id : </label>
-					<div>
-						<form:input path="customerId" />
-					</div>
-				</div>
-				<div>
 					<label for="customerName">Customer Name :</label>
 					<div>
-						<form:input path="customerName" />
-					</div>
-				</div>
-				<div>
-					<label for="emailId">Email Id :</label>
-					<div>
-						<form:input path="emailId" />
-					</div>
-				</div>
-				<div>
-					<label for="gender">Gender : </label>
-					<div>
-						<label for="gender">Male</label>
-						<form:radiobutton path="Gender" value="Male" />
-						<label for="gender">Female</label>
-						<form:radiobutton path="Gender" value="Female" />
-					</div>
-				</div>
-				<div>
-					<label for="phoneNumber">Phone Number : </label>
-					<div>
-						<form:input path="phoneNumber" />
-					</div>
-				</div>
-				<div>
-					<label for="accountNumber">Account Number :</label>
-					<div>
-						<form:input path="accountNumber" />
-					</div>
-				</div>
-				<div>
-					<label for="address">Address : </label>
-					<div>
-						<form:input path="address" />
-					</div>
-				</div>
-				<div>
-					<label for="district">District : </label>
-					<div>
-						<form:input path="district" />
-					</div>
-				</div>
-				<div>
-					<label for="state">State : </label>
-					<div>
-						<form:input path="state" />
-					</div>
-				</div>
-				<div>
-					<label for="country">Country : </label>
-					<div>
-						<form:input path="country" />
+						<form:input path="customerName" readonly="true"/>
 					</div>
 				</div>
 			</form:form>
 		</div>
+		<br>
 		<div id="orderList">
 			<table class="table-size">
 			<caption></caption>
 				<thead>
 					<tr>
-						<th>Order Id</th>
-						<th>Customer Id</th>
 						<th>Order Date</th>
 						<th>Shiped Date</th>
 						<th>Delivery Fees</th>
@@ -105,8 +47,6 @@ background-color:#cce6ff;
 				<tbody>
 					<c:forEach var="order" items="${orderList}">
 						<tr>
-							<td>${order.orderId}</td>
-							<td>${order.customerId}</td>
 							<td>${order.orderDate}</td>
 							<td>${order.shipDate}</td>
 							<td>${order.deliveryFees}</td>

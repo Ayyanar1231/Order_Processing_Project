@@ -14,6 +14,7 @@
 		<button onclick="document.location='/admin'"
 			style="float: left;">Back</button>
 	<h3>Update</h3>
+	<h3>${message}</h3>
 	<br>
 	<form action=deleteproduct method="get" style="margin: 0;">
 		<label>Product Id;</label> <input type="number" required="true" placeholder="Deleted Product Id"

@@ -34,7 +34,7 @@ public class CustomerDetailService {
 	
 	public CustomerDetail getCustomerUserNameAndCustomerPassword(String name, String password) {
 		
-        return customerDetailRepository.findByCustomerUserNameAndCustomerPassword(name, password);
+        return customerDetailRepository.findByEmailIdAndCustomerPassword(name, password);
     }
 
 	public void deleteById(int id) {

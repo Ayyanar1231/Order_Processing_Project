@@ -1,7 +1,6 @@
 package com.chainsys.orderprocessing.controller;
 
 import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +20,9 @@ import com.chainsys.orderprocessing.service.CustomerDetailService;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
+	
 	@Autowired
 	CustomerDetailService customerDetailService;
-
 	@GetMapping("/listcustomer")
 	public String getCustomers(Model model) {
 		List<CustomerDetail> theCustomerDetail = customerDetailService.getCustomer();
@@ -48,13 +47,23 @@ public class CustomerController {
 	}
 
 	@PostMapping("/add")
-	public String addNewCustomers(@Valid @ModelAttribute("addCustomer") CustomerDetail theCustomerDetail,Errors errors ) {
+	public String addNewCustomers(@Valid @ModelAttribute("addCustomer") CustomerDetail theCustomerDetail,Errors errors,Model model) {
+		
 		if (errors.hasErrors()) {
 			return "add-customer";
 		}
+		
+		try {
+			theCustomerDetail.setJoinDate();
+			customerDetailService.save(theCustomerDetail);
+		} catch (Exception e) {
+			String message="Already exist";
+			model.addAttribute("message", message);
+			String result="check your email and phone number";
+			model.addAttribute("result", result);
+			return "add-customer";
+		}	
 
-		theCustomerDetail.setJoinDate();
-		customerDetailService.save(theCustomerDetail);
 		return "redirect:/customerlogin";
 	}
 
@@ -76,13 +85,13 @@ public class CustomerController {
 	}
 
 	@GetMapping("/deletecustomer")
-	public String deleteCustomer(@RequestParam("customerId") int id) {
+	public String deleteCustomer(@RequestParam("customerId") int id,Model m) {
 		customerDetailService.deleteById(id);
 		return "redirect:/customer/listcustomer";
 	}
 
 	@GetMapping("/getcustomerorder")
-	public String getOrders(@RequestParam("customerId") int id, Model model) {
+	public String getOrders(@RequestParam("cusId") int id, Model model) {
 		CustomerOrderDTO dto = customerDetailService.getCustomerAndOrder(id);
 		model.addAttribute("getCustomer", dto.getCustomer());
 		model.addAttribute("orderList", dto.getOrderList());

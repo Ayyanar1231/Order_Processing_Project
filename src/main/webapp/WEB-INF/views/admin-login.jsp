@@ -15,17 +15,18 @@
 	<div>
 		<form:form action="checkadminlogin" method="post"
 			modelAttribute="admin">
+			<h2>${message}</h2>
 			<h1 class="h1">Admin Login</h1>
 			<div class="inset">
 				<p>
-					<label for="adminName">ADMIN NAME :</label>
-					<form:input type="text" placeholder="Enter name"
-						path="adminName" />
+					<label for="adminEmail">ADMIN E-MAIL :</label>
+					<form:input type="email" placeholder="Enter your E-mail" title="example12@gmail.com"
+						path="adminEmail" required="true"/>
 				</p>
 				<p>
 					<label for="adminPassword">ADMIN PASSWORD :</label>
-					<form:input type="password" placeholder="Enter password"
-						path="adminPassword" />
+					<form:input type="password" placeholder="Enter password" 
+						path="adminPassword" required="true"/>
 				</p>
 			</div>
 			<p>

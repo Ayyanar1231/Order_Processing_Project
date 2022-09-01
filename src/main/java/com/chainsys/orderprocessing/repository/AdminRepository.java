@@ -17,5 +17,5 @@ public interface AdminRepository extends CrudRepository<Admin, Integer> {
 
 	List<Admin> findAll();
 
-	Admin findByAdminNameAndAdminPassword(String name, String password);
+	Admin findByAdminEmailAndAdminPassword(String name, String password);
 }

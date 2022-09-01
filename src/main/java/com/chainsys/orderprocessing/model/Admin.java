@@ -11,8 +11,8 @@ public class Admin {
 	@Id
 	@Column(name = "admin_id")
 	private int adminId;
-	@Column(name = "admin_name")
-	private String adminName;
+	@Column(name = "admin_email")
+	private String adminEmail;
 	@Column(name = "admin_password")
 	private String adminPassword;
 
@@ -24,12 +24,14 @@ public class Admin {
 		this.adminId = adminId;
 	}
 
-	public String getAdminName() {
-		return adminName;
+	
+
+	public String getAdminEmail() {
+		return adminEmail;
 	}
 
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
+	public void setAdminEmail(String adminEmail) {
+		this.adminEmail = adminEmail;
 	}
 
 	public String getAdminPassword() {

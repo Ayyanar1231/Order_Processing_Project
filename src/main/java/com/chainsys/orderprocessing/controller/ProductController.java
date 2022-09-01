@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.chainsys.orderprocessing.model.OrderDetail;
 import com.chainsys.orderprocessing.model.Product;
 import com.chainsys.orderprocessing.service.CustomerDetailService;
+import com.chainsys.orderprocessing.service.OrderDetailService;
 import com.chainsys.orderprocessing.service.ProductService;
 
 @Controller
@@ -28,23 +31,41 @@ import com.chainsys.orderprocessing.service.ProductService;
 public class ProductController {
 	@Autowired
 	ProductService productService;
-	
+	@Autowired
+	private OrderDetailService orderDetailServcie;
 	@Autowired
 	CustomerDetailService customerDetailService;
 
 	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/Images";
 
 	@GetMapping("/listproduct")
-	public String getProducts(Model model) {
+	public String getProducts(@RequestParam("orderId")int orderId,@RequestParam("cusId")int cusId,Model model,Product product) {
 		List<Product> theProduct = productService.getProducts();
 		model.addAttribute("allProduct", theProduct);
+		List<OrderDetail>orderList=orderDetailServcie.getOrderDetailByOrderId(orderId);
+		model.addAttribute("orderList", orderList);
+		model.addAttribute("cusId", cusId);
+		model.addAttribute("orderId", orderId);
 		return "list-products";
 	}
+	
+	@GetMapping("/productlist")
+	public String listProducts(@RequestParam("orderId")int orderId,@RequestParam("cusId")int cusId,Model model,Product product) {
+		List<Product> theProduct = productService.getProducts();
+		model.addAttribute("allProduct", theProduct);
+		model.addAttribute("cusId", cusId);
+		model.addAttribute("orderId", orderId);
+//		productService.save(product);
+		return "order-list-products";
+	}
+	
 
 	@GetMapping("/getproductbyid")
-	public String getProduct(@RequestParam("productId") int id, Model model) {
+	public String getProduct(@RequestParam("productId") int id, Model model,HttpSession session) {
 		Product theProduct = productService.findByid(id);
 		model.addAttribute("getProductById", theProduct);
+		session.setAttribute("productId",theProduct.getProductId());
+		session.setAttribute("price",theProduct.getPrice());
 		return "find-product-id";
 	}
 
@@ -56,6 +77,7 @@ public class ProductController {
 	}
 
 	@PostMapping("/add")
+	
 	public String addNewOrder(@Valid @ModelAttribute("addProduct") Product product,
 			@RequestParam("productImage") MultipartFile file, Errors errors, @RequestParam("imgName") String imgName)
 			throws IOException {
@@ -128,8 +150,14 @@ public class ProductController {
 	}
 
 	@GetMapping("/deleteproduct")
-	public String deleteProduct(@RequestParam("productId") int id) {
+	public String deleteProduct(@RequestParam("productId") int id,Model m) {
+		try {
 		productService.deleteById(id);
+		}catch(Exception e) {
+			String message = "Invalid Id";
+			m.addAttribute("message",message);
+			return "delete-product-form";
+		}
 		return "delete-product-form";
 	}
 
@@ -142,7 +170,7 @@ public class ProductController {
 	public String getAllStatus(@RequestParam("price") double price, Model model) {
 		List<Product> productPrice = productService.productPrice(price);
 		model.addAttribute("allProduct", productPrice);
-		return "list-products";
+		return "order-list-products";
 	}
 
 }

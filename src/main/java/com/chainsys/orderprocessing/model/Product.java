@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
@@ -44,7 +45,17 @@ public class Product {
 	private String colour;
 	@Column(name="image")
 	private String image;
+	@Transient
+	private boolean selected;
 	
+	public boolean getSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean isSelected) {
+		this.selected = isSelected;
+	}
+
 	public String getImage() {
 		return image;
 	}

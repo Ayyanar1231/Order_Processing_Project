@@ -1,7 +1,9 @@
 package com.chainsys.orderprocessing.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.orderprocessing.model.Orders;
+import com.chainsys.orderprocessing.model.Product;
+import com.chainsys.orderprocessing.service.CustomerDetailService;
 import com.chainsys.orderprocessing.service.OrdersService;
 import com.chainsys.orderprocessing.service.ProductService;
 
@@ -27,6 +31,9 @@ public class OrdersController {
 
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	CustomerDetailService customerDetailService;
 
 	@GetMapping("/listorders")
 	public String getOrders(Model model) {
@@ -35,24 +42,51 @@ public class OrdersController {
 		return "list-orders";
 	}
 
+//	@GetMapping("/addorder")
+//	public String showAddOrder(@RequestParam("orderId") int id,HttpServletRequest request, Model model) {
+//		Product product = productService.findByid(id);
+//		Orders theOrders = new Orders();
+////		List<Product> selectedProducts = new ArrayList<Product>();
+////		for(Product prd:theProducts) {
+////			if(prd.getSelected()) {
+////				selectedProducts.add(prd);
+////			}
+////		}
+//		HttpSession session = request.getSession();
+//        int customerId = (int)session.getAttribute("customerId");
+//        theOrders.setCustomerId(customerId);
+//		model.addAttribute("addOrder", theOrders);
+////		model.addAttribute("selectedProducts", selectedProducts);
+//		theOrders.setDeliveryFees(40.0);
+//		return "add-order";
+//	}
+	
 	@GetMapping("/addorder")
-	public String showAddOrder(Model model) {
-		Orders theOrders = new Orders();
-		model.addAttribute("addOrder", theOrders);
-		theOrders.setDeliveryFees(40.0);
-		return "add-order";
+	public String showAddOrder(@RequestParam("productId")int productId,@RequestParam("cusId")int cusId,@RequestParam("orderId")int orderId,Model model,HttpSession session) {
+		session.setAttribute("productId", productId);
+		if(orderId==0) {
+			Orders theOrders = new Orders();
+			theOrders.setOrderId(orderId);
+	        theOrders.setCustomerId(cusId);
+			model.addAttribute("addOrder", theOrders);
+			theOrders.setDeliveryFees(40.0);
+			return "add-order";
+		}else
+			return "redirect:/orderdetail/addorderdetail?productId="+productId+"&orderId="+orderId;
 	}
 
 	@PostMapping("/add")
-	public String addNewOrder(@Valid @ModelAttribute("addOrder") Orders theOrder, Errors errors) {
+	public String addNewOrder(@Valid @ModelAttribute("addOrder") Orders theOrder, Errors errors,HttpServletRequest request) {
 		if (errors.hasErrors()) {
 			return "add-order";
 		}
 		theOrder.setOrderDate();
 		theOrder.setShipDate();
 		theOrder = ordersService.save(theOrder);
-		int orderId = theOrder.getOrderId();
-		return "redirect:/orderdetail/addorderdetail?orderId=" + orderId;
+		HttpSession session= request.getSession();
+		int productId=(int)session.getAttribute("productId");
+		int orderId=theOrder.getOrderId();
+		return "redirect:/orderdetail/addorderdetail?productId="+productId+"&orderId="+orderId;
 	}
 
 	@GetMapping("/updateorder")

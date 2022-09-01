@@ -3,10 +3,13 @@ package com.chainsys.orderprocessing.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 
@@ -16,12 +19,24 @@ import com.chainsys.orderprocessing.compositekey.OrderDetailsProduct;
 
 @Entity
 @Table(name = "order_detail")
-@IdClass(OrderDetailsProduct.class)
 public class OrderDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "order_detail_seq")
+	@SequenceGenerator(name = "order_detail_seq", sequenceName = "order_detail_seq", allocationSize = 1)
+	@Column(name="order_detail_id")
+	private int orderDetailId;
+	
+
+	public int getOrderDetailId() {
+		return orderDetailId;
+	}
+
+	public void setOrderDetailId(int orderDetailId) {
+		this.orderDetailId = orderDetailId;
+	}
+
 	@Column(name = "order_id")
 	private int orderId;
-	@Id
 	@Column(name = "product_id")
 	private int productId;
 	@Column(name = "quantity")

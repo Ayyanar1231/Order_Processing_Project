@@ -16,7 +16,7 @@
 		<h2>Successful Your Order</h2>
 		<h4>Message is: ${message}</h4>
 		<h1>
-			<button class="btn" onclick="document.location='/product/listproduct'">Home</button>
+			<button class="btn" onclick="document.location='/product/productlist?orderId=0&cusId=${cusId}'">Home</button>
 		</h1>
 	</div>
 </body>

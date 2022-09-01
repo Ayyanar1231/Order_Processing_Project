@@ -15,45 +15,14 @@
 </style>
 <body>
 	<div >
-			<h2>Your Order Detail</h2>
+		<button onclick="document.location='/customerlogin'" class="btn" style="float: right;">Back</button>
+		<button name="value" class="btn"
+			onclick="document.location='/product/getfilterprice'"
+			style="margin: 20px;">Filter Price</button>
 	</div>
-	
+	<button onclick="document.location='/customer/getcustomerorder?cusId=${cusId}'" style="margin-left: 596px">Your History</button>
 	<div id="table root">
-		<table class="table-size">
-		<caption></caption>
-			<colgroup>
-				<col span="7" style="background-color: MediumTurquoise">
-			</colgroup>
-			<thead>
-				<tr>
-					<th>Product Id</th>
-					<th>Quantity</th>
-					<th>Price</th>
-					<th>Total Amount</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="orderdetail" items="${orderList}">
-					<tr>
-						<td>${orderdetail.productId}</td>
-						<td>${orderdetail.quantity}</td>
-						<td>${orderdetail.price}</td>
-						<td>${orderdetail.totalAmount}</td>
-						<%-- <td><a
-							href="/orderdetail/deleteorder?orderDetailId=${orderdetail.orderDetailId}">Delete</a></td> --%>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		</div> 
-		<div>
-		<button onclick="document.location='/ordersuccess?orderId=${orderId}&cusId=${cusId}'"  style="margin-left: 601px;">Buy Now</button>
-		</div>
-		<br>
-		<div>
-		<h2>Product List</h2></div>
-		<br>
-	<div id="table root">
+	<h2>Product List</h2>
 		<table class="table-size">
 			<caption></caption>
 			<colgroup>

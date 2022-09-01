@@ -11,12 +11,13 @@ import com.chainsys.orderprocessing.model.CustomerDetail;
 public interface CustomerDetailRepository extends CrudRepository<CustomerDetail, Integer> {
 	CustomerDetail findById(int id);
 
+	@SuppressWarnings("unchecked")
 	CustomerDetail save(CustomerDetail cd);
 
 	void deleteById(int id);
 
 	List<CustomerDetail> findAll();
 	
-	CustomerDetail findByCustomerUserNameAndCustomerPassword(String name, String password);
+	CustomerDetail findByEmailIdAndCustomerPassword(String name, String password);
 	
 }

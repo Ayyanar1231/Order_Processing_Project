@@ -10,14 +10,16 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style><%@include file="/WEB-INF/css/list-customer.css"%>
 .table-size{
-border:2; 
-width:100%; 
-cellpadding:2;
-background-color:#cce6ff;
+    width: 2260px;
+    background-color: #cce6ff;
 }
 </style>
 </head>
 <body>
+<div class="image">
+<button class="btn" onclick="document.location='/admin'"
+			style="float: right;">Back</button>
+			<h2>Costomer Detail List</h2>
 	<div id="table root">
 		<table class="table-size">
 		<caption></caption>
@@ -28,14 +30,11 @@ background-color:#cce6ff;
 			<thead>
 				<tr>
 					<th>Customer Id</th>
-					<th>Customer Username</th>
-					<th>Customer Password</th>
+					<th>Email Id</th>
 					<th>Join Date</th>
 					<th>Customer Name</th>
-					<th>Email Id</th>
 					<th>Gender</th>
 					<th>Phone Number</th>
-					<th>Account Number</th>
 					<th>Address</th>
 					<th>District</th>
 					<th>State</th>
@@ -43,7 +42,6 @@ background-color:#cce6ff;
 					<th>Pin Code</th>
 					<th>Delete</th>
 					<th>Find Id</th>
-					<th>Get Orders</th>
 				</tr>
 			</thead>
 
@@ -51,14 +49,11 @@ background-color:#cce6ff;
 				<c:forEach var="customer" items="${allCustomer}">
 					<tr>
 						<td>${customer.customerId}</td>
-						<td>${customer.customerUserName}</td>
-						<td>${customer.customerPassword}</td>
+						<td>${customer.emailId}</td>
 						<td>${customer.joinDate}</td>
 						<td>${customer.customerName}</td>
-						<td>${customer.emailId}</td>
 						<td>${customer.gender}</td>
 						<td>${customer.phoneNumber}</td>
-						<td>${customer.accountNumber}</td>
 						<td>${customer.address}</td>
 						<td>${customer.district}</td>
 						<td>${customer.state}</td>
@@ -67,15 +62,12 @@ background-color:#cce6ff;
 						<td><a
 							href="deletecustomer?customerId=${customer.customerId }">Delete</a>
 						<td><a
-							href="getcustomerbyid?customerId=${customer.customerId}">Find
-								Id</a></td>
-						<td><a
-							href="getcustomerorder?customerId=${customer.customerId}">DTO
-								Id</a></td>
-					</tr>
+							href="getcustomerbyid?customerId=${customer.customerId}">Find</a></td>
+						</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
 	</div>
 </body>
 </html>

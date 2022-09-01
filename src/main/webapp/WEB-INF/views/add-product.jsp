@@ -15,6 +15,8 @@
 <body>
 	<div class="container" id="root">
 		<div class="header" id="form">
+		<button  onclick="document.location='/admin'"
+			style="float: center;">Back</button>
 			<form:form class="form" action="/product/add" method="post"
 				object="product" enctype="multipart/form-data"
 				modelAttribute="addProduct">
@@ -22,7 +24,7 @@
 					<label for="productName">product Name</label>
 					<form:input path="productName" type="text"
 						placeholder="Enter the Product Name"
-						title="Product Name can't be empty or must contain only alphabets"
+						title="min 3 letters in alphabets"
 						pattern="^[A-Za-z]\\w{3,50}$" name="productName" required="true" />
 					<form:errors path="productName" class="text-danger" />
 				</div>
@@ -69,7 +71,7 @@
 					</div>
 				</div>
 				<input type="hidden" name="imgName" value="product.image">
-				<form:button type="submit" class="btn btn-primary">Add Product</form:button>
+				<form:button type="submit" class="btn">Add Product</form:button>
 			</form:form>
 		</div>
 	</div>

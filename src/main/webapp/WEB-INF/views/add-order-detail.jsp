@@ -17,17 +17,17 @@
 		<button class="btn" onclick="document.location='/orders/addorder'"
 			style="float: left;">Back</button>
 		<br> <br>
-		<div class="header" id="form">
+		<%-- <div class="header" id="form">
 			<form:form action="/orderdetail/add" method="post"
-				modelAttribute="addOrderDetail">
+				modelAttribute="addOrderDetails">
 				<div>
 					<label for="orderId">Order Id :</label>
-					<form:input path="orderId" />
+					<form:input path="orderId" readonly="true"/>
 					<form:errors path="orderId" class="text-danger"></form:errors>
 				</div>
 				<div>
 					<label for="productId">Product Id :</label>
-					<form:input path="productId" />
+					<form:input path="productId" readonly="true"/>
 					<form:errors path="productId" class="text-danger"></form:errors>
 				</div>
 				<div>
@@ -38,21 +38,49 @@
 				</div>
 				<div>
 					<label for="price">Price :</label>
-					<form:input path="price" id="price" onchange="amountCalculate()" />
+					<form:input path="price" id="price" onchange="amountCalculate()" readonly="true"/>
 					<form:errors path="price" class="text-danger"></form:errors>
 				</div>
 				<div>
 					<label for="totalAmount">Total Amount :</label>
 					<form:input path="totalAmount" id="totalAmount"
-						onchange="amountCalculate(this.form)" />
+						onchange="amountCalculate(this.form)" readonly="true"/>
 					<form:errors path="totalAmount" class="text-danger"></form:errors>
 				</div>
 				<div>
 					<button class="btn">New Order Done</button>
 				</div>
 			</form:form>
-		</div>
+	</div> --%>
+	<div id="table root">
+		<table class="table-size">
+		<caption></caption>
+			<colgroup>
+				<col span="7" style="background-color: MediumTurquoise">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Order Id</th>
+					<th>Product Id</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Total Amount</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="orderdetail" items="${allOrderDetails}">
+					<tr>
+						<td>${orderdetail.orderId}</td>
+						<td>${orderdetail.productId}</td>
+						<td>${orderdetail.quantity}</td>
+						<td>${orderdetail.price}</td>
+						<td>${orderdetail.totalAmount}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
+</div>
 </body>
 <script type="text/javascript">
 	function amountCalculate() {

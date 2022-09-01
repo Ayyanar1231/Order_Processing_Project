@@ -15,20 +15,26 @@
 	<div class="container" id="root">
 		<div class="header" id="form">
 			<p>
-				<button onclick="document.location='/webapp'">Back</button>
+				<button class="btn" onclick="document.location='/webapp'">Back</button>
 			</p>
 			<form:form class="form" action="/customer/add" method="post"
 				modelAttribute="addCustomer">
 
 				<div>
+					<label for="emailId">Email Id :</label>
+					<form:input type="email" placeholder="example@gmail.com"
+						pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$" path="emailId" />
+					<form:errors path="emailId" class="text-danger" />
+				</div>
+				<%-- <div>
 					<label for="customerUserName">Customer Username :</label>
 					<form:input type="text" placeholder="Enter Username"
-						path="customerUserName" pattern="^[A-Za-z]\\w{3,20}$" required="true" title="Username can't be empty "/>
+						path="customerUserName" pattern="^[A-Za-z]\\w{3,20}$" required="true" title="Username minimum 3 Alba letters"/>
 					<form:errors path="customerUserName" class="text-danger" />
-				</div>
+				</div> --%>
 				<div>
 					<label for="customerPassword">Customer Password :</label>
-					<form:input type="password" pattern="^[A-Za-z]\\w{3,20}$" placeholder="Enter Password" title="Password can't be empty "
+					<form:input type="password" pattern="^[A-Za-z]\\w{3,20}$" placeholder="Enter Password" title="Password minimum 3 Alba letters"
 						path="customerPassword" required="true" />
 					<form:errors path="customerPassword" class="text-danger" />
 				</div>
@@ -37,12 +43,6 @@
 					<form:input type="text" placeholder="Enter Name"
 						path="customerName" />
 					<form:errors path="customerName" class="text-danger" />
-				</div>
-				<div>
-					<label for="emailId">Email Id :</label>
-					<form:input type="email" placeholder="example@gmail.com"
-						path="emailId" />
-					<form:errors path="emailId" class="text-danger" />
 				</div>
 				<div>
 					<label for="gender">Gender :</label>
@@ -54,18 +54,18 @@
 				</div>
 				<div>
 					<label for="phoneNumber">Phone Number : </label>
-					<form:input path="phoneNumber" title="Phone no can't be empty " type="tel"
+					<form:input path="phoneNumber" title="Enter the 10 numbers" type="tel"
                         required="true" pattern='[0-9]{10}' placeholder='1234567890'
                         name="phoneNumber" onblur="numberCheck();"/>
 					<form:errors path="phoneNumber" class="text-danger" />
 				</div>
-				<div>
+				<%-- <div>
 					<label for="accountNumber">Account Number :</label>
-					<form:input path="accountNumber" title="Account no can't be empty " type="acc"
+					<form:input path="accountNumber" title="Enter the 12 numbers" type="acc"
                         required="true" pattern='[0-9]{12}' placeholder='12-1234567890'
                         name="accountNumber" onblur="numberCheck();"/>
 					<form:errors path="accountNumber" class="text-danger" />
-				</div>
+				</div> --%>
 				<div>
 					<label for="address">Address :</label>
 					<form:input type="text" placeholder="Enter Address" path="address" />
@@ -91,13 +91,15 @@
 				</div>
 				<div>
 					<label for="pinCode">Pin Code :</label>
-					<form:input path="pinCode" title="Phone no can't be empty " type="pin"
+					<form:input path="pinCode" title="Enter the 6 numbers" type="pin"
                          pattern='[0-9]{6}' placeholder='123456' required="true"
                         name="pinCode" onblur="numberCheck();" />
 				</div>
 				<form:errors path="pinCode" class="text-danger" />
+				<h2>${message}<br>
+				${result}</h2>
 				<p>
-					<form:button>Go To Login</form:button>
+					<form:button class="btn">Go To Login</form:button>
 				</p>
 			</form:form>
 		</div>

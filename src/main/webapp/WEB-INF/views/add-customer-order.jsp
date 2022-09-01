@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="payment_reference_number">Payment References Number :</label>
+					<label for="payment_reference_number">References Number :</label>
 					<div>
 						<form:input path="payment_reference_number" />
 					</div>

@@ -12,7 +12,6 @@
 </style>
 </head>
 <body>
-
 	<div class="form" id="root">
 		<button class="btn" onclick="document.location='/product/listproduct'">Home</button>
 		<br> <br>
@@ -21,12 +20,12 @@
 				modelAttribute="addOrder">
 				<div>
 					<label for="customerId">Customer Id :</label>
-					<form:input type="number" path="customerId" />
+					<form:input type="number" path="customerId" readonly="true"/>
 					<form:errors path="customerId" class="text-danger" />
 				</div>
 				<div>
 					<label for="deliveryFees">Delivery Fees :</label>
-					<form:input type="number" path="deliveryFees" />
+					<form:input type="number" path="deliveryFees" readonly="true"/>
 					<form:errors path="deliveryFees" class="text-danger" />
 				</div>
 				<div>
@@ -39,7 +38,7 @@
 				</div>
 				<div>
 					<label for="paymentReferenceNumber">Reference Number :</label>
-					<form:input path="paymentReferenceNumber" id="referanceNumber" />
+					<form:input path="paymentReferenceNumber" id="referanceNumber" readonly="true"/>
 					<form:errors path="paymentReferenceNumber" class="text-danger"></form:errors>
 				</div>
 				<br>
@@ -50,7 +49,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript">
-	document.getElementById("referanceNumber").value = Math.floor(Math.random() * 100000);
+<script>
+<%@include file="/WEB-INF/script/add-order.js"%>
 </script>
 </html>

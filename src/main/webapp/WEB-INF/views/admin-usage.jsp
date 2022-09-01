@@ -12,6 +12,7 @@
 </style>
 </head>
 <body>
+<div class="btn"><button onclick="document.location='/webapp'" class="btn" style="float: right;">Logout</button></div>
 	<div class="header">
 		<h1>Welcome to the FlipKart</h1>
 		<h4>Message is: ${message}</h4>
@@ -29,7 +30,6 @@
 		<h3>
 			<ol>
 				<li><a href="/product/addproduct">Add New Product</a></li>
-				<li><a href="/product/getupdate">Update Product</a></li>
 				<li><a href="/product/getdelete">Delete Product</a></li>
 			</ol>
 		</h3>

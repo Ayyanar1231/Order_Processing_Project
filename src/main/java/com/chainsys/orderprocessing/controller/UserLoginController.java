@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.orderprocessing.model.Admin;
 import com.chainsys.orderprocessing.model.CustomerDetail;
@@ -39,30 +40,37 @@ public class UserLoginController {
 	}
 
 	@PostMapping("/checkcustomerlogin")
-	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customerDetail) {
-		CustomerDetail customer = customerDetailService
-				.getCustomerUserNameAndCustomerPassword(customerDetail.getCustomerUserName(), customerDetail.getCustomerPassword());
-	
+	public String checkingAccess(@ModelAttribute("customer") CustomerDetail customerDetail, HttpSession session,
+			Model m) {
+		CustomerDetail customer = customerDetailService.getCustomerUserNameAndCustomerPassword(
+				customerDetail.getEmailId(), customerDetail.getCustomerPassword());
 		if (customer != null) {
-			return "redirect:/product/listproduct";
-		} else
-			return "invalid-customer-error";
+			session.setAttribute("customerId", customer.getCustomerId());
+			int id = customer.getCustomerId();
+			return "redirect:/product/productlist?orderId=" + 0 + "&cusId=" + id;
+		} else {
+			String message = "Invalid E-mail & Password";
+			m.addAttribute("message", message);
+			return "customer-login";
+		}
 
 	}
 
 //---------------login---------------------
 
 	@GetMapping("/ordersuccess")
-	public String orderSuccess(Model m) {
+	public String orderSuccess(Model m,@RequestParam("orderId")int orderId,@RequestParam("cusId")int cusId) {
 		String message = "Thank you for your Ordering";
 		m.addAttribute("message", message);
+		m.addAttribute("cusId", cusId);
+		m.addAttribute("orderId", orderId);
 		return "order-success";
 	}
 //-----------------success status----------------
 
 	@GetMapping("/admin")
 	public String adminPage(Model m) {
-		String message = "Admin page of the FLIPCART";
+		String message = "Admin page of the FLIPKART";
 		m.addAttribute("message", message);
 		return "admin-usage";
 	}
@@ -75,12 +83,15 @@ public class UserLoginController {
 	}
 
 	@PostMapping("/checkadminlogin")
-	public String checkingAdminAccess(@ModelAttribute("admin") Admin admin) {
-		Admin adminlogin = adminService.getAdminNameAndAdminPassword(admin.getAdminName(), admin.getAdminPassword());
+	public String checkingAdminAccess(@ModelAttribute("admin") Admin admin, Model m) {
+		Admin adminlogin = adminService.getAdminEmailAndAdminPassword(admin.getAdminEmail(), admin.getAdminPassword());
 		if (adminlogin != null) {
 			return "redirect:/admin";
-		} else
-			return "invalid-admin-error";
+		} else {
+			String message = "Invalid E-mail & Password";
+			m.addAttribute("message", message);
+			return "admin-login";
+		}
 
 	}
 }

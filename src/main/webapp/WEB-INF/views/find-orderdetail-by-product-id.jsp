@@ -21,36 +21,38 @@ background-color:#cce6ff;
 <body>
 	<div id="root">
 		<div class="orders" id="form">
+		<button  onclick="document.location='/orderdetail/listorderdetail'"
+			style="float: right;">Back</button>
 			<form:form action="getorderdetailbyproduct" method="post"
 				modelAttribute="fetchOrderDetail">
 				<div>
 					<label for="orderId">Order Id : </label>
 					<div>
-						<form:input path="orderId" />
+						<form:input path="orderId" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="productId">Product Id :</label>
 					<div>
-						<form:input path="productId" />
+						<form:input path="productId" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="quantity">Quantity :</label>
 					<div>
-						<form:input path="quantity" />
+						<form:input path="quantity" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="price">Price :</label>
 					<div>
-						<form:input path="price" />
+						<form:input path="price" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="totalAmount">Total Amount :</label>
 					<div>
-						<form:input path="totalAmount" />
+						<form:input path="totalAmount" readonly="true"/>
 					</div>
 				</div>
 			</form:form>
@@ -85,7 +87,7 @@ background-color:#cce6ff;
 			</table>
 		</div>
 		<div class="product" id=" fetchProduct">
-			<table>
+			<table class="table-size">
 			<caption></caption>
 				<thead>
 					<tr>

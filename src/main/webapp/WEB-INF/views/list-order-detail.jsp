@@ -10,14 +10,15 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style><%@include file="/WEB-INF/css/list-order-detail.css"%>
 .table-size{
-border:2; 
 width:100%; 
-cellpadding:2;
 background-color:#cce6ff;
 }
 </style>
 </head>
 <body>
+<button  onclick="document.location='/admin'"
+			style="float: right;">Back</button>
+<h2>Order Detail List</h2>
 	<div id="table root">
 		<table class="table-size">
 		<caption></caption>
@@ -31,7 +32,6 @@ background-color:#cce6ff;
 					<th>Quantity</th>
 					<th>Price</th>
 					<th>Total Amount</th>
-					<th>Orderd Detail</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,9 +42,6 @@ background-color:#cce6ff;
 						<td>${orderdetail.quantity}</td>
 						<td>${orderdetail.price}</td>
 						<td>${orderdetail.totalAmount}</td>
-						<td><a
-							href="getorderdetailbyproduct?orderId=${orderdetail.orderId}&productId=${orderdetail.productId}">Order
-								Details</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
