@@ -1,6 +1,5 @@
 package com.chainsys.orderprocessing.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.orderprocessing.model.Orders;
-import com.chainsys.orderprocessing.model.Product;
 import com.chainsys.orderprocessing.service.CustomerDetailService;
 import com.chainsys.orderprocessing.service.OrdersService;
 import com.chainsys.orderprocessing.service.ProductService;

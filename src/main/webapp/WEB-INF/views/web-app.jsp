@@ -106,12 +106,11 @@ height="300px">
 </div>
 <div class="books-container">
 <div style="margin-right: -931px;">
-<marquee  behavior="alternate" direction="right">
 <img alt="" src="https://onhike.com/wp-content/uploads/2021/07/buy-the-best-electronic-products-online.jpg" style="width: 300px;height: 300px">
 <img alt="" src="https://blog.saginfotech.com/wp-content/uploads/2018/12/gst-rate-slash.jpg" style="width: 300px;height: 300px">
 <img alt="" src="https://content.jdmagicbox.com/comp/ujjain/n9/9999px734.x734.100903155231.v9n9/catalogue/r-b-zone-freeganj-ujjain-ujjain-electronic-goods-showrooms-bdwryak621.jpg" style="width: 300px;height: 300px">
 <img alt="" src="https://media.istockphoto.com/photos/businessman-using-a-computer-to-document-management-concept-online-picture-id1386672473?b=1&k=20&m=1386672473&s=170667a&w=0&h=wyEIM2lPONuvORvZOD92h01g_FpDvKwOZu57hnvNNuk=" style="width: 300px;height: 300px">
-</marquee>
+
 <h2><a href="/customerlogin" class="view"><button style="margin-right: 532px;width: 233px;height: 50px;">View all Products</button></a></h2></div></div>
 </main>
 
@@ -133,7 +132,7 @@ No 85, J J Street,<br>Golden City,<br>Madurai,<br>Tamil
 Nadu.
 </div>
 </footer>
-  <center> Ayanambakkam, Chennai - 600095 (Behind Apollo Nursing College, Poniamman Nagar)</center>
+ Ayanambakkam, Chennai - 600095 (Behind Apollo Nursing College, Poniamman Nagar)
 <script>
   <%@include file="/WEB-INF/script/webapp.js"%>
 </script>
