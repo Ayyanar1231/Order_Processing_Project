@@ -54,15 +54,7 @@
 			</div>
 		</div>
 </body>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-	<script>
-function myFunction() {
-  var x = document.getElementById("myInput");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
+<script>
+<%@include file="/WEB-INF/script/customer-login.js"%>
 </script>
 </html>
