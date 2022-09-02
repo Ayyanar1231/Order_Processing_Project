@@ -39,25 +39,6 @@ public class OrdersController {
 		model.addAttribute("allOrders", theOrders);
 		return "list-orders";
 	}
-
-//	@GetMapping("/addorder")
-//	public String showAddOrder(@RequestParam("orderId") int id,HttpServletRequest request, Model model) {
-//		Product product = productService.findByid(id);
-//		Orders theOrders = new Orders();
-////		List<Product> selectedProducts = new ArrayList<Product>();
-////		for(Product prd:theProducts) {
-////			if(prd.getSelected()) {
-////				selectedProducts.add(prd);
-////			}
-////		}
-//		HttpSession session = request.getSession();
-//        int customerId = (int)session.getAttribute("customerId");
-//        theOrders.setCustomerId(customerId);
-//		model.addAttribute("addOrder", theOrders);
-////		model.addAttribute("selectedProducts", selectedProducts);
-//		theOrders.setDeliveryFees(40.0);
-//		return "add-order";
-//	}
 	
 	@GetMapping("/addorder")
 	public String showAddOrder(@RequestParam("productId")int productId,@RequestParam("cusId")int cusId,@RequestParam("orderId")int orderId,Model model,HttpSession session) {

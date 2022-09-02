@@ -55,7 +55,6 @@ public class ProductController {
 		model.addAttribute("allProduct", theProduct);
 		model.addAttribute("cusId", cusId);
 		model.addAttribute("orderId", orderId);
-//		productService.save(product);
 		return "order-list-products";
 	}
 	

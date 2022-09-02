@@ -26,12 +26,6 @@
 						pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$" path="emailId" />
 					<form:errors path="emailId" class="text-danger" />
 				</div>
-				<%-- <div>
-					<label for="customerUserName">Customer Username :</label>
-					<form:input type="text" placeholder="Enter Username"
-						path="customerUserName" pattern="^[A-Za-z]\\w{3,20}$" required="true" title="Username minimum 3 Alba letters"/>
-					<form:errors path="customerUserName" class="text-danger" />
-				</div> --%>
 				<div>
 					<label for="customerPassword">Customer Password :</label>
 					<form:input type="password" pattern="^[A-Za-z]\\w{3,20}$" placeholder="Enter Password" title="Password minimum 3 Alba letters"
@@ -59,13 +53,6 @@
                         name="phoneNumber" onblur="numberCheck();"/>
 					<form:errors path="phoneNumber" class="text-danger" />
 				</div>
-				<%-- <div>
-					<label for="accountNumber">Account Number :</label>
-					<form:input path="accountNumber" title="Enter the 12 numbers" type="acc"
-                        required="true" pattern='[0-9]{12}' placeholder='12-1234567890'
-                        name="accountNumber" onblur="numberCheck();"/>
-					<form:errors path="accountNumber" class="text-danger" />
-				</div> --%>
 				<div>
 					<label for="address">Address :</label>
 					<form:input type="text" placeholder="Enter Address" path="address" />

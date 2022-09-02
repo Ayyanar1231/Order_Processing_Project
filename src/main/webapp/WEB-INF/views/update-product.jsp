@@ -24,34 +24,34 @@
 						placeholder="Enter the Product Name"
 						title="Product Name can't be empty or must contain only alphabets"
 						pattern="^[A-Za-z]\\w{3,20}$" name="productName" required="true" />
-					<form:errors path="productName" class="text-danger" />
+					<form:errors path="productName" class="text-danger" readonly="true"/>
 				</div>
 				<div>
 					<label for="quantity">Quantity</label>
 					<form:input path="quantity" title="Quantity can't be empty "
 						required="true" pattern='[0-9]{2}' placeholder='12'
-						name="quantity" />
+						name="quantity" readonly="true"/>
 				</div>
 				<div>
 					<label for="price">Price</label>
 					<form:input path="price" placeholder="normalFees" name="price"
 						title="Fees can't be empty or must contains only numbers"
 						pattern="^[0-9]+$" required="true" />
-					<form:errors path="price" class="text-danger" />
+					<form:errors path="price" class="text-danger" readonly="true"/>
 				</div>
 				<div>
 					<label for="stockInHand">Stock</label>
 					<form:input path="stockInHand" title="Stock can't be empty "
 						type="acc" required="true" pattern='[0-9]{2}' placeholder='12'
 						name="quantity" />
-					<form:errors path="stockInHand" class="text-danger" />
+					<form:errors path="stockInHand" class="text-danger" readonly="true"/>
 				</div>
 				<div>
 					<label for="brand">Brand</label>
 					<form:input type="text" path="brand" placeholder="Enter the Brand"
 						title="Brand can't be empty or must contain only alphabets"
 						name="brand" required="true" />
-					<form:errors path="brand" class="text-danger" />
+					<form:errors path="brand" class="text-danger" readonly="true"/>
 				</div>
 				<div>
 					<label for="colour">Colour</label>
@@ -59,18 +59,9 @@
 						placeholder="Enter the colour"
 						title="Colour can't be empty or must contain only alphabets"
 						name="brand" required="true" />
-					<form:errors path="colour" class="text-danger" />
+					<form:errors path="colour" class="text-danger" readonly="true"/>
 				</div>
-				<div class="col-sm-5">
-					<p>Product Image</p>
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" name="productImage"
-							accept="image/jpeg, image/png ,image/jpg" id="productImage" /> <label
-							class="custom-file-label" for=productImage>Choosefile</label>
-					</div>
-				</div>
-				<input type="hidden" name="imgName" value="product.image">
-				<form:button type="submit" class="btn">Update Product</form:button>
+				<form:button type="submit" class="btn">Okay</form:button>
 			</form:form>
 		</div>
 	</div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,8 @@ background-color:#cce6ff;
 			<thead>
 				<tr>
 					<th>Order Id</th>
-					<th>Product Id</th>
+					<th>Product</th>
+					<th>Product Name</th>
 					<th>Quantity</th>
 					<th>Price</th>
 					<th>Total Amount</th>
@@ -38,7 +40,10 @@ background-color:#cce6ff;
 				<c:forEach var="orderdetail" items="${allOrderDetail}">
 					<tr>
 						<td>${orderdetail.orderId}</td>
-						<td>${orderdetail.productId}</td>
+						<td><img
+							src="file://D:/Users/ayya3114/eclipse-workspace/orderprocessing/src/main/resources/Images/${orderdetail.product.image}"
+							alt="image" width="100" height="100"></td>
+						<td>${orderdetail.product.productName}</td>
 						<td>${orderdetail.quantity}</td>
 						<td>${orderdetail.price}</td>
 						<td>${orderdetail.totalAmount}</td>

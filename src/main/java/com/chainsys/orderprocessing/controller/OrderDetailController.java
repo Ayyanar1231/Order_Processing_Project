@@ -32,8 +32,8 @@ public class OrderDetailController {
 	ProductService productService;
 
 	@GetMapping("/listorderdetail")
-	public String getOrderDetail(Model model) {
-		List<OrderDetail> theOrders = orderDetailService.getOrderDetail();
+	public String getOrderDetail(@RequestParam("orderId") int orderId,Model model) {
+		List<OrderDetail> theOrders = orderDetailService.getOrderDetailByOrderId(orderId);
 		model.addAttribute("allOrderDetail", theOrders);
 		return "list-order-detail";
 	}

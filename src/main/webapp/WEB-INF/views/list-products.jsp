@@ -26,7 +26,8 @@
 			</colgroup>
 			<thead>
 				<tr>
-					<th>Product Id</th>
+					<th>Image</th>
+					<th>Product Name</th>
 					<th>Quantity</th>
 					<th>Price</th>
 					<th>Total Amount</th>
@@ -35,12 +36,13 @@
 			<tbody>
 				<c:forEach var="orderdetail" items="${orderList}">
 					<tr>
-						<td>${orderdetail.productId}</td>
+						<td><img
+							src="file://D:/Users/ayya3114/eclipse-workspace/orderprocessing/src/main/resources/Images/${orderdetail.product.image}"
+							alt="image" width="100" height="100"></td>
+						<td>${orderdetail.product.productName}</td>
 						<td>${orderdetail.quantity}</td>
 						<td>${orderdetail.price}</td>
 						<td>${orderdetail.totalAmount}</td>
-						<%-- <td><a
-							href="/orderdetail/deleteorder?orderDetailId=${orderdetail.orderDetailId}">Delete</a></td> --%>
 					</tr>
 				</c:forEach>
 			</tbody>

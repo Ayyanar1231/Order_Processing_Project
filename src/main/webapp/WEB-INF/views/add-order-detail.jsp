@@ -17,41 +17,6 @@
 		<button class="btn" onclick="document.location='/orders/addorder'"
 			style="float: left;">Back</button>
 		<br> <br>
-		<%-- <div class="header" id="form">
-			<form:form action="/orderdetail/add" method="post"
-				modelAttribute="addOrderDetails">
-				<div>
-					<label for="orderId">Order Id :</label>
-					<form:input path="orderId" readonly="true"/>
-					<form:errors path="orderId" class="text-danger"></form:errors>
-				</div>
-				<div>
-					<label for="productId">Product Id :</label>
-					<form:input path="productId" readonly="true"/>
-					<form:errors path="productId" class="text-danger"></form:errors>
-				</div>
-				<div>
-					<label for="quantity">Quantity :</label>
-					<form:input path="quantity" id="quantity"
-						onchange="amountCalculate()" />
-					<form:errors path="quantity" class="text-danger"></form:errors>
-				</div>
-				<div>
-					<label for="price">Price :</label>
-					<form:input path="price" id="price" onchange="amountCalculate()" readonly="true"/>
-					<form:errors path="price" class="text-danger"></form:errors>
-				</div>
-				<div>
-					<label for="totalAmount">Total Amount :</label>
-					<form:input path="totalAmount" id="totalAmount"
-						onchange="amountCalculate(this.form)" readonly="true"/>
-					<form:errors path="totalAmount" class="text-danger"></form:errors>
-				</div>
-				<div>
-					<button class="btn">New Order Done</button>
-				</div>
-			</form:form>
-	</div> --%>
 	<div id="table root">
 		<table class="table-size">
 		<caption></caption>
@@ -82,14 +47,7 @@
 	</div>
 </div>
 </body>
-<script type="text/javascript">
-	function amountCalculate() {
-		var quantity = document.getElementById("quantity").value;
-		var price = document.getElementById("price").value;
-		var totalAmount = parseInt(quantity) * parseInt(price);
-
-		document.getElementById("totalAmount").value = totalAmount;
-		return totalAmount;
-	}
+<script>
+<%@include file="/WEB-INF/script/add-order-detail.js"%>
 </script>
 </html>

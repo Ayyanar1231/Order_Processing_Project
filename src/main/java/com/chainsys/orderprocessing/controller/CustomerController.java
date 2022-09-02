@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.orderprocessing.dto.CustomerOrderDTO;
 import com.chainsys.orderprocessing.model.CustomerDetail;
+import com.chainsys.orderprocessing.model.OrderDetail;
 import com.chainsys.orderprocessing.service.CustomerDetailService;
 
 @Controller
