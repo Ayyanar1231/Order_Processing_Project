@@ -45,16 +45,6 @@ public class Product {
 	private String colour;
 	@Column(name="image")
 	private String image;
-	@Transient
-	private boolean selected;
-	
-	public boolean getSelected() {
-		return selected;
-	}
-
-	public void setSelected(boolean isSelected) {
-		this.selected = isSelected;
-	}
 
 	public String getImage() {
 		return image;

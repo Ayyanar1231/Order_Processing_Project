@@ -58,20 +58,11 @@ public class CustomerDetailService {
 
 	public boolean findByEmail(String emailId) {
 		boolean result=customerDetailRepository.existsByEmailId(emailId);
-		System.out.println(result);
 		return result;
 	}
 
 	public boolean findByPhoneNumber(long phoneNumber) {
 	boolean result=customerDetailRepository.existsByPhoneNumber(phoneNumber);
-	System.out.println(result);
 	return result;
 	}
-
-//	public boolean findByPhoneNumber(long phoneNumber) {
-//		if(customerDetailRepository.findByPhoneNumber(phoneNumber))
-//		  return true;
-//		else
-//		  return false;
-//	}
 }

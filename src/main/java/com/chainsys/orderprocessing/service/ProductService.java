@@ -20,10 +20,6 @@ public class ProductService {
 
 	public Product save(Product product) {
 		return productRepository.save(product);
-//		product = productRepository.save(product);
-//		int newStack = product.getStockInHand()-product.getQuantity();
-//		product.setStockInHand(newStack);
-//		return product;
 	}
 
 	public OrderDetail save(OrderDetail orderDetail) {

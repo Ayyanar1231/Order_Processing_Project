@@ -83,8 +83,6 @@ public class OrderDetailController {
 	@GetMapping("/deleteorder")
 	public String deleteProduct(@RequestParam("orderDetailId") int orderDetailId,@RequestParam("orderId")int orderId,@RequestParam("cusId")int cusId,Model model) {
 		orderDetailService.deleteByOrderId(orderDetailId);
-//		model.addAttribute("cusId", cusId);
-//		model.addAttribute("orderId", orderId);
 		return "list-products";
 	}
 

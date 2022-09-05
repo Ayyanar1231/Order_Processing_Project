@@ -24,9 +24,6 @@ public class CustomerDetail {
 	@SequenceGenerator(name = "address_id", sequenceName = "address_id", allocationSize = 1)
 	@Column(name = "customer_id")
 	private int customerId;
-//	@Column(name = "customer_username")
-//	@Size(min = 3, max = 15, message = "username min 3 to max 15 letters")
-//	private String customerUserName;
 	@Column(name = "customer_password")
 	@Size(min = 3, max = 15, message = "password 3 to 15 charector")
 	private String customerPassword;
@@ -44,9 +41,6 @@ public class CustomerDetail {
 	@Column(name = "phone_number")
 	@Digits(integer = 10, fraction = 0, message = "only 10 digit number")
 	private long phoneNumber;
-//	@Column(name = "account_number")
-//	@Digits(integer = 12, fraction = 0, message = "only 10 digit number")
-//	private long accountNumber;
 	@Column(name = "address")
 	@Size(min = 5, message = "address min 5 letters")
 	private String address;
@@ -73,14 +67,6 @@ public class CustomerDetail {
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-
-//	public String getCustomerUserName() {
-//		return customerUserName;
-//	}
-//
-//	public void setCustomerUserName(String customerUserName) {
-//		this.customerUserName = customerUserName;
-//	}
 
 	public String getCustomerPassword() {
 		return customerPassword;
@@ -132,14 +118,6 @@ public class CustomerDetail {
 	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
-//	public long getAccountNumber() {
-//		return accountNumber;
-//	}
-//
-//	public void setAccountNumber(long accountNumber) {
-//		this.accountNumber = accountNumber;
-//	}
 
 	public String getAddress() {
 		return address;

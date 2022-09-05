@@ -60,8 +60,7 @@ public class OrderDetailService {
 	}
 	
 	public OrderDetail getOrderDetailAndProduct(int orderId) {
-		OrderDetail listOrder =orderDetailRepository.findById(orderId);
-	    return listOrder;
+		return orderDetailRepository.findById(orderId);
 	}
 
 }
