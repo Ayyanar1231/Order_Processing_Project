@@ -13,17 +13,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.orderprocessing.commonutil.InvalidInputDataException;
 import com.chainsys.orderprocessing.dto.CustomerOrderDTO;
 import com.chainsys.orderprocessing.model.CustomerDetail;
-import com.chainsys.orderprocessing.model.OrderDetail;
 import com.chainsys.orderprocessing.service.CustomerDetailService;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
-	
+
 	@Autowired
 	CustomerDetailService customerDetailService;
+
 	@GetMapping("/listcustomer")
 	public String getCustomers(Model model) {
 		List<CustomerDetail> theCustomerDetail = customerDetailService.getCustomer();
@@ -48,23 +49,38 @@ public class CustomerController {
 	}
 
 	@PostMapping("/add")
-	public String addNewCustomers(@Valid @ModelAttribute("addCustomer") CustomerDetail theCustomerDetail,Errors errors,Model model) {
-		
+	public String addNewCustomers(@Valid @ModelAttribute("addCustomer") CustomerDetail theCustomerDetail, Errors errors,
+			Model model) throws InvalidInputDataException{
+		String messageB=null;
+		String messageA=null;
 		if (errors.hasErrors()) {
 			return "add-customer";
 		}
-		
 		try {
-			theCustomerDetail.setJoinDate();
-			customerDetailService.save(theCustomerDetail);
-		} catch (Exception e) {
-			String message="Already exist";
-			model.addAttribute("message", message);
-			String result="check your email and phone number";
-			model.addAttribute("result", result);
-			return "add-customer";
-		}	
+			boolean result1 = customerDetailService.findByEmail(theCustomerDetail.getEmailId());
+			boolean resultA = customerDetailService.findByPhoneNumber(theCustomerDetail.getPhoneNumber());
+			if (result1 == true) {
+				 messageB= "Check Your email ";
+				 throw new InvalidInputDataException(messageB);
 
+				 }
+				 else if (resultA == true) {
+				messageA = "Check Your PhoneNumber ";
+				throw new InvalidInputDataException(messageA);
+
+			} 
+			else {
+				theCustomerDetail.setJoinDate();
+				customerDetailService.save(theCustomerDetail);
+			}
+			
+		} catch (InvalidInputDataException e) {
+			String message = "Already exist";
+			
+			model.addAttribute("message", message);
+			model.addAttribute("result", e.getMessage());
+			return "add-customer";
+		}
 		return "redirect:/customerlogin";
 	}
 
@@ -76,7 +92,8 @@ public class CustomerController {
 	}
 
 	@PostMapping("/update")
-	public String updateProducts(@Valid @ModelAttribute("updateCustomer") CustomerDetail theCustomerDetail,Errors errors) {
+	public String updateProducts(@Valid @ModelAttribute("updateCustomer") CustomerDetail theCustomerDetail,
+			Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-customer";
 		}
@@ -86,7 +103,7 @@ public class CustomerController {
 	}
 
 	@GetMapping("/deletecustomer")
-	public String deleteCustomer(@RequestParam("customerId") int id,Model m) {
+	public String deleteCustomer(@RequestParam("customerId") int id, Model m) {
 		customerDetailService.deleteById(id);
 		return "redirect:/customer/listcustomer";
 	}

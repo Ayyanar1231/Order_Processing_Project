@@ -19,5 +19,8 @@ public interface CustomerDetailRepository extends CrudRepository<CustomerDetail,
 	List<CustomerDetail> findAll();
 	
 	CustomerDetail findByEmailIdAndCustomerPassword(String name, String password);
+
+    boolean existsByEmailId(String emailId);
+	boolean existsByPhoneNumber(long phoneNumber);
 	
 }

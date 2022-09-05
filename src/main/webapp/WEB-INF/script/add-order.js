@@ -1,1 +1,0 @@
-document.getElementById("referanceNumber").value = Math.floor(Math.random() * 100000);

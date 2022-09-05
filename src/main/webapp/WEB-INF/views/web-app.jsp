@@ -40,7 +40,7 @@ alt="profile" src="https://cdn2.vectorstock.com/i/1000x1000/17/61/male-avatar-pr
 
 </nav>
 
-<iframe width="1500" height="400" src="https://www.youtube.com/embed/P91bKe-J-mc?autoplay=1&mute=1" title="YouTube video player"></iframe>
+<iframe width="1500" height="400" src="https://www.youtube.com/embed/P91bKe-J-mc?autoplay=1&mute=1&loop=1" title="YouTube video player"></iframe>
 <main>
 <div class="slide-container">
 <div class="slides">
@@ -106,6 +106,7 @@ height="300px">
 </div>
 <div class="books-container">
 <div style="margin-right: -931px;">
+
 <img alt="" src="https://onhike.com/wp-content/uploads/2021/07/buy-the-best-electronic-products-online.jpg" style="width: 300px;height: 300px">
 <img alt="" src="https://blog.saginfotech.com/wp-content/uploads/2018/12/gst-rate-slash.jpg" style="width: 300px;height: 300px">
 <img alt="" src="https://content.jdmagicbox.com/comp/ujjain/n9/9999px734.x734.100903155231.v9n9/catalogue/r-b-zone-freeganj-ujjain-ujjain-electronic-goods-showrooms-bdwryak621.jpg" style="width: 300px;height: 300px">

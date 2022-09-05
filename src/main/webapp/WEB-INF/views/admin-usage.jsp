@@ -38,7 +38,7 @@
 		<h2>Orderd Detail</h2>
 		<h3>
 			<ol>
-				<li><a href="/orderdetail/listorderdetail">Order Detail
+				<li><a href="/orderdetail/orderdetaillist">Order Detail
 						List</a></li>
 			</ol>
 		</h3>

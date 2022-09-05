@@ -37,6 +37,13 @@ public class OrderDetailController {
 		model.addAttribute("allOrderDetail", theOrders);
 		return "list-order-detail";
 	}
+	
+	@GetMapping("/orderdetaillist")
+	public String listOrderDetail(Model model) {
+		List<OrderDetail> theOrders = orderDetailService.getOrderDetail();
+		model.addAttribute("allOrderDetail", theOrders);
+		return "list-order-detail";
+	}
 
 	
 	@GetMapping("/addorderdetail")

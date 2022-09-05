@@ -13,9 +13,9 @@
 </head>
 <body>
 	<div class="form" id="root">
-		<button class="btn" onclick="document.location='/product/listproduct'">Home</button>
+		<button class="btn" id="backbtn" onclick="document.location='/product/productlist?orderId=0&cusId=${cusId}'">Back</button>
 		<br> <br>
-		<div class="header" id="form">
+		<div>
 			<form:form action="/orders/add" method="post"
 				modelAttribute="addOrder">
 				<div>

@@ -86,7 +86,7 @@
 				<h2>${message}<br>
 				${result}</h2>
 				<p>
-					<form:button class="btn">Go To Login</form:button>
+					<form:button class="btn">Submit</form:button>
 				</p>
 			</form:form>
 		</div>

@@ -1,16 +1,18 @@
 body {
+	
 	font-style: normal;
 	font-weight: bold;
 	font-size: 18px;
+	line-height: 40px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 600px;
 	width: 1300px;
 	background-image:
-		url('https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzY291bnR8ZW58MHx8MHx8&w=1000&q=80');
+		url('https://img.freepik.com/free-vector/red-sale-price-tag-style-banner-design-template_1017-27328.jpg?w=2000');
 }
 
 .container {
@@ -31,10 +33,12 @@ body {
 }
 
 .form {
-	background-color: Orange;
+	margin: 80px;
+    padding: 20px;
+	background-color:#ffa5009e;
 	border: none;
 	border-radius: 2px;
-	margin-bottom: 335px;
+	height: 420px;
 }
 
 .form label {
@@ -42,7 +46,7 @@ body {
 	display: inline-block;
 	padding: 3px 6px;
 	text-align: right;
-	width: 150px;
+	width: 165px;;
 	vertical-align: top;
 }
 
@@ -86,4 +90,8 @@ p {
 	background-color: #9932CC;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
+}
+#backbtn{
+	float: left;
+    margin: 0px;
 }

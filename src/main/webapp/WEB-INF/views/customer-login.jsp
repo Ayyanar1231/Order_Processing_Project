@@ -17,7 +17,7 @@
 	<div class="main" style="width:0px;">
 		<div class="navbar">
 			<div class="icon">
-				<h2 class="logo" style="margin-top: 63px;">ToDo</h2>
+				<h2 class="logo" style="margin-top: 63px;">Flipkart</h2>
 			</div>
 			<nav style="width: 1365px">
 			<div class="menu" style="margin-bottom: -41px;">
@@ -29,8 +29,6 @@
 				</ul>
 			</div>
 			</nav>
-			
-
 		</div>
 			<div class="form">
 				<form:form action="checkcustomerlogin" method="post"
@@ -54,6 +52,7 @@
 			</div>
 		</div>
 </body>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 <script>
 <%@include file="/WEB-INF/script/customer-login.js"%>
 </script>
