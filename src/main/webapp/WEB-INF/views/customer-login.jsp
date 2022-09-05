@@ -52,7 +52,7 @@
 			</div>
 		</div>
 </body>
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
 <script>
 <%@include file="/WEB-INF/script/customer-login.js"%>
 </script>
