@@ -36,7 +36,7 @@ public class ProductController {
 	@Autowired
 	CustomerDetailService customerDetailService;
 
-	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/Images";
+	public static String uploadPicture = System.getProperty("user.dir") + "/src/main/resources/Images";
 
 	@GetMapping("/listproduct")
 	public String getProducts(@RequestParam("orderId")int orderId,@RequestParam("cusId")int cusId,Model model,Product product) {
@@ -93,7 +93,7 @@ public class ProductController {
 			String imageUUID;
 			if (!file.isEmpty()) {
 				imageUUID = file.getOriginalFilename();
-				Path fileAndPathName = Paths.get(uploadDir, imageUUID);
+				Path fileAndPathName = Paths.get(uploadPicture, imageUUID);
 				Files.write(fileAndPathName, file.getBytes());
 			} else {
 				imageUUID = imgName;
